@@ -17,10 +17,18 @@
   </NavBrand>
   <NavHamburger on:click={toggle} />
   <NavUl {hidden}>
-    <NavLi href="/" active={true} class="flex items-center text-xl">
+    <NavLi
+      href="/"
+      active={$page.url.pathname === "/"}
+      class="flex items-center text-xl"
+    >
       <img src="/EMMA.svg" class="w-9 h-10 px-3" alt="Logo" />MY EMMA</NavLi
     >
-    <NavLi href="/about" class="flex items-center  text-xl">
+    <NavLi
+      href="/about"
+      active={$page.url.pathname === "/about"}
+      class="flex items-center  text-xl"
+    >
       <img src="/EMMA.svg" class="w-9 h-10 px-3" alt="Logo" />ABOUT</NavLi
     >
   </NavUl>

@@ -6,7 +6,6 @@
 <Heading tag="h5" class="font-light"
   >Retrosynthesis, READRetro, and the READRetro Website</Heading
 >
-
 <Heading tag="h4" class="mt-10 mb-2">Retrosynthesis</Heading>
 <P class="mb-3"
   >Retrosynthesis is a problem-solving technique used in organic chemistry to
@@ -58,30 +57,4 @@
   efficiency. The platform is powered by cutting-edge technologies such as
   SvelteKit, FastAPI, Celery, PostgreSQL, and Redis, providing a powerful and
   scalable infrastructure to support your synthetic chemistry endeavors.</P
->
-<P class="mb-3"
-  >The front-end is built on the SvelteKit framework, providing a highly
-  optimized and responsive user interface that enables retrosynthesis tasks to
-  be submitted and executed easily and efficiently.</P
->
-<P class="mb-3"
-  >The back-end is powered by FastAPI, a modern web framework designed for
-  high-performance applications. With FastAPI, you can enjoy lightning-fast
-  response times and robust functionality, ensuring that your submitted tasks
-  are executed quickly and efficiently. Celery is utilized as a powerful and
-  scalable solution for task queue management. Redis and PostgreSQL are used as
-  the backend for Celery, providing a highly efficient and performant solution
-  for managing and storing your submitted retrosynthesis tasks.</P
->
-<P class="mb-3"
-  >The whole website is packaged using Docker, a containerization platform that
-  enables easy deployment and management of applications across a wide range of
-  environments.</P
->
-<P class="mb-3"
-  >The READRetro website is open-source and available on GitHub. If you are
-  interested in contributing to the project, please visit our
-  <A href="https://github.com/pnucolab/readretro-website" target="_blank"
-    >GitHub repository</A
-  > and submit a pull request.</P
 >
