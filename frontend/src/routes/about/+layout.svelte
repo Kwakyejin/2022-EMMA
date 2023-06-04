@@ -1,7 +1,7 @@
 <script>
-  import "../app.postcss";
+  import "../../app.postcss";
   import { page } from "$app/stores";
-  import "./styles.css";
+  import "../styles.css";
 </script>
 
 <div class="w-full">
