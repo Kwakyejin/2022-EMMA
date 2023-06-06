@@ -4,16 +4,7 @@
   import { Popover } from "flowbite-svelte";
   import { onMount } from "svelte";
   import { Modal, Label, Input, Textarea } from "flowbite-svelte";
-  import {
-    Footer,
-    FooterLinkGroup,
-    FooterLink,
-    ImagePlaceholder,
-    TextPlaceholder,
-    Skeleton,
-    FooterCopyright,
-  } from "flowbite-svelte";
-  let formModal = false;
+  import About from "../../about/+page.svelte";
   import {
     Navbar,
     NavBrand,
@@ -22,6 +13,9 @@
     NavHamburger,
   } from "flowbite-svelte";
   import { page } from "$app/stores";
+  import { Footer, FooterCopyright } from "flowbite-svelte";
+
+  let formModal = false;
 
   export let data;
   let result;
@@ -31,7 +25,7 @@
   let Competition;
   let title;
   let story;
-
+  console.log(data);
   async function get_result() {
     try {
       const response = await fetch(
@@ -146,6 +140,7 @@
         if (response.ok) {
           const result = await response.json();
           console.log(result);
+          get_Interest();
         } else {
           console.error("Error:", response.status);
         }
@@ -164,6 +159,7 @@
         if (response.ok) {
           const result = await response.json();
           console.log(result);
+          get_Qual();
         } else {
           console.error("Error:", response.status);
         }
@@ -182,6 +178,7 @@
         if (response.ok) {
           const result = await response.json();
           console.log(result);
+          get_Major();
         } else {
           console.error("Error:", response.status);
         }
@@ -200,6 +197,7 @@
         if (response.ok) {
           const result = await response.json();
           console.log(result);
+          get_Competition();
         } else {
           console.error("Error:", response.status);
         }
@@ -207,7 +205,7 @@
         console.error("Error:", error);
       }
     }
-    location.reload();
+    //location.reload();
   }
 
   async function delete_emma(d) {
@@ -223,6 +221,7 @@
         if (response.ok) {
           const result = await response.json();
           console.log(result);
+          get_Interest();
         } else {
           console.error("Error:", response.status);
         }
@@ -240,6 +239,7 @@
 
         if (response.ok) {
           const result = await response.json();
+          get_Qual();
           console.log(result);
         } else {
           console.error("Error:", response.status);
@@ -259,6 +259,7 @@
         if (response.ok) {
           const result = await response.json();
           console.log(result);
+          get_Major();
         } else {
           console.error("Error:", response.status);
         }
@@ -277,6 +278,7 @@
         if (response.ok) {
           const result = await response.json();
           console.log(result);
+          get_Competition();
         } else {
           console.error("Error:", response.status);
         }
@@ -284,7 +286,7 @@
         console.error("Error:", error);
       }
     }
-    location.reload();
+    //location.reload();
   }
 
   let c1 = true;
@@ -314,7 +316,6 @@
     >
       <img src="/EMMA.svg" class="w-9 h-10 px-3" alt="Logo" />LOGIN</NavLi
     >
-
     <NavLi
       href="/about"
       active={$page.url.pathname === "/about" ? true : false}
@@ -613,7 +614,7 @@
   </div>
 {/if}
 
-<Modal bind:open={formModal} size="xs" autoclose={false} class="w-full">
+<Modal bind:open={formModal} size="xs" autoclose={true} class="w-full">
   <form class="flex flex-col space-y-6" action="#">
     <Heading class="text-xl font-medium text-gray-900 dark:text-white">
       EMMA 추가하기
@@ -648,3 +649,4 @@
 <Footer class="w-full translate-y-full translate-x-0">
   <FooterCopyright href="/" by="KwakYejin" year={2023} />
 </Footer>
+<div class="hidden"><About {data} /></div>

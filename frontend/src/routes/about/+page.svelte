@@ -7,33 +7,8 @@
     NavUl,
     NavHamburger,
   } from "flowbite-svelte";
-  import { onMount } from "svelte";
   import { page } from "$app/stores";
-  export let data;
-  let result;
-  async function get_result() {
-    try {
-      const response = await fetch(
-        `http://10.125.218.100:9025/result?id=${data.id}`,
-        {
-          mode: "cors",
-        }
-      );
-
-      if (response.ok) {
-        result = await response.json();
-        console.log(result);
-      } else {
-        console.error("Error:", response.status);
-      }
-    } catch (error) {
-      console.error("Error:", error);
-    }
-  }
-
-  onMount(async () => {
-    get_result();
-  });
+  import { onMount } from "svelte";
 </script>
 
 <Navbar let:hidden let:toggle>
@@ -59,6 +34,7 @@
     >
   </NavUl>
 </Navbar>
+
 <Heading tag="h2" class="mt-5 mb-2">About</Heading>
 <Heading tag="h5" class="font-light"
   >EMMA는 대학생들을 위한 포트폴리오 정리 웹사이트입니다.</Heading

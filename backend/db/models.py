@@ -9,7 +9,3 @@ class Person(Base):
     Qual = Column(Text, nullable=True)
     Major = Column(Text, nullable=True)
     Competition = Column(Text, nullable=True)
-    #status = Column(String, nullable=False)
-    #result = Column(Text, nullable=True)
-    #start_date = Column(DateTime, nullable=False)
-    #end_date = Column(DateTime, nullable=True)

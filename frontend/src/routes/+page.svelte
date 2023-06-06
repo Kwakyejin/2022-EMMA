@@ -7,7 +7,6 @@
     Checkbox,
     Heading,
   } from "flowbite-svelte";
-
   let id;
 
   async function fetch_result() {

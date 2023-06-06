@@ -24,7 +24,7 @@
       if (response.ok) {
         const result = await response.json();
         console.log(result);
-        document.location.href = `/emma/${id}`;
+        document.location.href = `/emma/${result.id}`;
       } else {
         console.error("Error:", response.status);
       }
